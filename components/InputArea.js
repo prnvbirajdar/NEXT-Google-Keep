@@ -22,7 +22,7 @@ const InputArea = () => {
   };
 
   return (
-    <main className="flex">
+    <main className="flex flex-col">
       <input
         type="text"
         placeholder="Title"
@@ -32,13 +32,15 @@ const InputArea = () => {
       />
       <textarea
         type="text"
-        rows="4"
-        cols="50"
+        rows="2"
+        cols="30"
         placeholder="Take a note..."
         value={inputBody}
         onChange={(e) => setInputBody(e.target.value)}
       />
-      <button onClick={handleSubmit}>DONE</button>
+      <button disabled={!inputBody && !inputTitle} onClick={handleSubmit}>
+        DONE
+      </button>
     </main>
   );
 };
