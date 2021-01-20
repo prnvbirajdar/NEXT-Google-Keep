@@ -42,7 +42,7 @@ const InputArea = () => {
     <main
       onClick={() => setShowInput(true)}
       onFocus={() => setShowInput(true)}
-      className="bg-white border rounded-md overflow-hidden max-w-md mx-auto mt-10 mb-5 shadow-md transition cursor-text"
+      className="bg-white border rounded-md overflow-hidden max-w-250 sm:max-w-sm md:max-w-md mx-auto mt-10 mb-5 shadow-md transition cursor-text"
     >
       <div className="flex flex-col ">
         {showInput && (
@@ -53,12 +53,12 @@ const InputArea = () => {
             value={inputTitle}
             onChange={(e) => setInputTitle(e.target.value)}
             onFocus={() => setShowInput(true)}
-            className="pl-3 pt-1"
+            className="pl-3 pt-1 outline-none"
           />
         )}
 
         <textarea
-          className="pl-3 pt-2"
+          className="pl-3 pt-2 outline-none"
           type="text"
           rows="2"
           cols="20"
@@ -68,11 +68,11 @@ const InputArea = () => {
           onFocus={() => setShowInput(true)}
         />
       </div>
-      <div className="flex justify-end">
+      <div className="flex justify-end p-0 m-0">
         <button
           disabled={!inputBody && !inputTitle}
           onClick={handleSubmit}
-          className=" text-gray-700 rounded-md px-4 py-1 m-2 transition select-none hover:bg-gray-100 focus:outline-none focus:shadow-outline"
+          className=" text-gray-700 rounded-md  px-2 py-1 mr-1 mb-1 md:px-4 md:py-1 md:mr-1.5 md:mb-1.5 transition select-none hover:bg-gray-100 focus:outline-none focus:shadow-outline"
         >
           Done
         </button>
