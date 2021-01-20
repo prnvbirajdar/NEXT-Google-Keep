@@ -1,23 +1,13 @@
 import { createContext, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 export const ListContext = createContext();
 
 const ListContextProvider = (props) => {
-  const [list, setList] = useState([
-    {
-      title: "hi",
-      body: "hellow world",
-      id: 1,
-    },
-    {
-      title: "hi",
-      body: "hellow world",
-      id: 2,
-    },
-  ]);
+  const [list, setList] = useState([]);
 
   const addList = (title, body) => {
-    setList([...list, { title: title, body: body, id }]);
+    setList([...list, { title, body, id: uuidv4() }]);
   };
 
   const removeList = (id) => {

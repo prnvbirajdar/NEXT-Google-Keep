@@ -1,18 +1,24 @@
 import { useState, useContext } from "react";
 import { ListContext } from "../assets/contexts/ListContext";
 
-const InputArea = ({ inputBody, inputTitle, setInputBody, setInputTitle }) => {
-  const { list } = useContext(ListContext);
+const InputArea = () => {
+  const { list, addList } = useContext(ListContext);
 
+  const [inputTitle, setInputTitle] = useState("");
+  const [inputBody, setInputBody] = useState("");
   const [showInput, setShowInput] = useState(false);
 
   const handleOnFocus = () => {
     setShowInput(false);
   };
 
+  console.log(inputTitle);
+  console.log(inputBody);
+
   const handleSubmit = () => {
-    console.log(inputTitle);
-    console.log(inputBody);
+    addList(inputTitle, inputBody);
+    setInputBody("");
+    setInputTitle("");
   };
 
   return (
@@ -32,11 +38,11 @@ const InputArea = ({ inputBody, inputTitle, setInputBody, setInputTitle }) => {
         value={inputBody}
         onChange={(e) => setInputBody(e.target.value)}
       />
-      <button type="submit" onSubmit={handleSubmit}>
-        DONE
-      </button>
+      <button onClick={handleSubmit}>DONE</button>
     </main>
   );
 };
 
 export default InputArea;
+
+// { inputBody, inputTitle, setInputBody, setInputTitle }
