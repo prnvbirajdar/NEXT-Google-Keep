@@ -10,13 +10,6 @@ const InputArea = () => {
 
   const titleRef = useRef(null);
 
-  const handleOnFocus = () => {
-    setShowInput(true);
-  };
-
-  console.log(inputTitle);
-  console.log(inputBody);
-
   const handleSubmit = () => {
     addList(inputTitle, inputBody);
     setInputBody("");
@@ -32,7 +25,6 @@ const InputArea = () => {
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -70,9 +62,11 @@ const InputArea = () => {
       </div>
       <div className="flex justify-end p-0 m-0">
         <button
+          tabIndex="0"
           disabled={!inputBody && !inputTitle}
           onClick={handleSubmit}
-          className=" text-gray-700 rounded-md  px-2 py-1 mr-1 mb-1 md:px-4 md:py-1 md:mr-1.5 md:mb-1.5 transition select-none hover:bg-gray-100 focus:outline-none focus:shadow-outline"
+          onFocus={() => setShowInput(true)}
+          className="text-gray-700 rounded-md px-2 py-1 mr-1 mb-1 md:px-4 md:py-1 md:mr-1.5 md:mb-1.5 transition select-none hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
         >
           Done
         </button>
