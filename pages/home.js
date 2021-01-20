@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ListContextProvider from "../assets/contexts/InputContext";
 import InputArea from "../components/InputArea";
 
 const Home = () => {
@@ -8,7 +9,12 @@ const Home = () => {
 
   return (
     <div>
-      <InputArea />
+      <InputArea
+        inputTitle={inputTitle}
+        setInputTitle={setInputTitle}
+        inputBody={inputBody}
+        setInputBody={setInputBody}
+      />
     </div>
   );
 };
