@@ -42,30 +42,41 @@ const InputArea = () => {
     <main
       onClick={() => setShowInput(true)}
       onFocus={() => setShowInput(true)}
-      className="flex flex-col border rounded-md overflow-hidden max-w-md mx-auto mt-10 mb-5 shadow transition cursor-text"
+      className="bg-white border rounded-md overflow-hidden max-w-md mx-auto mt-10 mb-5 shadow-md transition cursor-text"
     >
-      {showInput && (
-        <input
-          ref={titleRef}
+      <div className="flex flex-col ">
+        {showInput && (
+          <input
+            ref={titleRef}
+            type="text"
+            placeholder="Title"
+            value={inputTitle}
+            onChange={(e) => setInputTitle(e.target.value)}
+            onFocus={() => setShowInput(true)}
+            className="pl-3 pt-1"
+          />
+        )}
+
+        <textarea
+          className="pl-3 pt-2"
           type="text"
-          placeholder="Title"
-          value={inputTitle}
-          onChange={(e) => setInputTitle(e.target.value)}
+          rows="2"
+          cols="20"
+          placeholder="Take a note..."
+          value={inputBody}
+          onChange={(e) => setInputBody(e.target.value)}
           onFocus={() => setShowInput(true)}
         />
-      )}
-
-      <textarea
-        type="text"
-        rows="2"
-        cols="30"
-        placeholder="Take a note..."
-        value={inputBody}
-        onChange={(e) => setInputBody(e.target.value)}
-      />
-      <button disabled={!inputBody && !inputTitle} onClick={handleSubmit}>
-        DONE
-      </button>
+      </div>
+      <div className="flex justify-end">
+        <button
+          disabled={!inputBody && !inputTitle}
+          onClick={handleSubmit}
+          className=" text-gray-700 rounded-md px-4 py-1 m-2 transition select-none hover:bg-gray-100 focus:outline-none focus:shadow-outline"
+        >
+          Done
+        </button>
+      </div>
     </main>
   );
 };
