@@ -7,8 +7,8 @@ const ListComponent = () => {
 
   return list.length ? (
     <div className="flex justify-center">
-      <div className="grid grid-cols-1 gap-x-0 gap-y-5 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-6 sm:mx-12 lg:mx-16 xl:mx-20">
-        {list.map((l) => {
+      <div className="grid grid-cols-1 gap-x-0 gap-y-5 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-6 sm:mx-12 ">
+        {[...list].reverse().map((l) => {
           return <ListDetail list={l} key={l.id} />;
         })}
       </div>

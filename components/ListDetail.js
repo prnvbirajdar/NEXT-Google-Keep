@@ -13,12 +13,12 @@ const ListDetail = ({ list }) => {
           <p className="p-1">
             <strong>{list.title}</strong>
           </p>
-          <div className=" cursor-pointer ">II</div>
+          <div className=" cursor-pointer invisible">II</div>
         </div>
 
         <p>{list.body}</p>
         <button
-          className="flex justify-end pr-1"
+          className="flex justify-end"
           onClick={() => removeList(list.id)}
         >
           X
