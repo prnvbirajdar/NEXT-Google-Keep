@@ -32,7 +32,7 @@ const InputArea = () => {
   }, []);
 
   return (
-    <main className="bg-white border rounded-md overflow-hidden max-w-250 sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto mt-10 mb-5 shadow-md transition cursor-text">
+    <main className="bg-white border rounded-md overflow-hidden w-3/4 sm:max-w-md md:max-w-md lg:max-w-lg mx-auto mt-10 mb-5 shadow-md transition cursor-text">
       <form onSubmit={handleSubmit}>
         <div className="flex flex-col ">
           {showInput && (
@@ -60,12 +60,12 @@ const InputArea = () => {
         </div>
 
         {inputTitle || inputBody ? (
-          <div className={`flex justify-end p-0 m-0`}>
+          <div className="flex justify-end p-0 m-0">
             <button
               type="submit"
               tabIndex="0"
               disabled={!inputBody && !inputTitle}
-              className="text-gray-700 rounded-md px-2 py-1 mr-1 mb-1 md:px-4 md:py-1 md:mr-1.5 md:mb-1.5 transition select-none hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+              className="text-gray-700 bg-gray-100 rounded-md px-3 py-1 mr-1 mb-1 md:px-4 md:py-1 md:mr-1.5 md:mb-1.5 transition select-none hover:bg-gray-200 focus:bg-gray-200 focus:outline-none"
             >
               Done
             </button>
@@ -77,6 +77,8 @@ const InputArea = () => {
     </main>
   );
 };
+
+// bg-gray-100 text-gray-700 active:bg-gray-200 hover:bg-gray-200 font-bold uppercase text-sm px-5 py-2 rounded outline-none focus:outline-none 
 
 export default InputArea;
 
