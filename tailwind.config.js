@@ -11,6 +11,10 @@ module.exports = {
         275: "275px",
         300: "300px",
       },
+      gridTemplateColumns: {
+        // Complex site-specific column configuration
+        list: "repeat(auto-fit, minmax(270px, 1fr))",
+      },
     },
   },
   variants: {

@@ -7,8 +7,8 @@ const ListDetail = ({ list }) => {
   console.log(list);
 
   return (
-    <section>
-      <div className="flex flex-col min-w-xs max-w-xs border rounded-md p-3 m-2 break-words hover:shadow-md transition h-full">
+    <section className="">
+      <div className="bg-white flex flex-col min-w-xs max-w-xs border rounded-md p-3 m-auto break-words hover:shadow-md transition h-full">
         <div className="flex justify-between">
           <p className="p-1">
             <strong>{list.title}</strong>

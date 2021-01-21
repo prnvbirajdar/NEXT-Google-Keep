@@ -6,13 +6,11 @@ const ListComponent = () => {
   const { list } = useContext(ListContext);
 
   return list.length ? (
-    <div className="flex justify-center">
-      <div className="grid grid-cols-1 gap-x-0 gap-y-5 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-6 sm:mx-12 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-x-4 gap-y-5 mx-4 sm:mx-12 ">
         {[...list].reverse().map((l) => {
           return <ListDetail list={l} key={l.id} />;
         })}
       </div>
-    </div>
   ) : (
     <div></div>
   );
