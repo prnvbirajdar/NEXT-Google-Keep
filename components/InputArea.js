@@ -50,7 +50,7 @@ const InputArea = () => {
           <textarea
             className="pl-3 pt-2 outline-none"
             type="text"
-            rows="2"
+            rows="3"
             cols="20"
             placeholder="Take a note..."
             value={inputBody}
