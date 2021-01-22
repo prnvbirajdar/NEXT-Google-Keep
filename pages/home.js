@@ -5,9 +5,7 @@ import ListComponent from "../components/ListComponent";
 import Navbar from "../components/Navbar";
 
 const Home = () => {
-  //   const [inputTitle, setInputTitle] = useState("");
-  //   const [inputBody, setInputBody] = useState("");
-  //const [todo, setTodo] = useState([]);
+    
 
   return (
     <React.Fragment>
@@ -21,8 +19,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// inputTitle={inputTitle}
-//           setInputTitle={setInputTitle}
-//           inputBody={inputBody}
-//           setInputBody={setInputBody}

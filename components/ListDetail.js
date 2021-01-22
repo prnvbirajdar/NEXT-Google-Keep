@@ -5,8 +5,6 @@ import Modal from "./Modal";
 const ListDetail = ({ list }) => {
   const [showModal, setShowModal] = useState(false);
 
-  console.log(list);
-
   return (
     <section
       className="cursor-pointer focus:outline-none focus:shadow"
@@ -36,7 +34,3 @@ const ListDetail = ({ list }) => {
 };
 
 export default ListDetail;
-
-// <div className="absolute bottom-0 right-0 p-1.5 m-2 cursor-pointer bg-gray-100 hover:bg-gray-200 transition rounded">
-//           <Edit />
-//         </div>
