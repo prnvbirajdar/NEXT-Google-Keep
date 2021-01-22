@@ -1,5 +1,6 @@
 import { useState, useContext, useRef } from "react";
 import { ListContext } from "../assets/contexts/ListContext";
+import Delete from "./IconComponents/Delete";
 
 const Modal = ({ list, showModal, setShowModal }) => {
   const [modalTitle, setModalTitle] = useState(list.title);
@@ -65,9 +66,13 @@ const Modal = ({ list, showModal, setShowModal }) => {
                 </div>
 
                 <div className="flex justify-between pt-9 sm:pt-16 md:pt-16">
-                  <button className="" onClick={() => removeList(list.id)}>
-                    X
-                  </button>
+                  <div
+                    tabIndex="0"
+                    className="cursor-pointer self-end p-2.5 bg-gray-100 hover:bg-gray-200 focus:bg-gray-200 transition rounded select-none focus:outline-none"
+                    onClick={() => removeList(list.id)}
+                  >
+                    <Delete />
+                  </div>
                   <button
                     type="submit"
                     tabIndex="0"

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Edit from "./IconComponents/Edit";
 import Modal from "./Modal";
 
 const ListDetail = ({ list }) => {
@@ -7,14 +8,17 @@ const ListDetail = ({ list }) => {
   console.log(list);
 
   return (
-    <section>
+    <section
+      className="cursor-pointer focus:outline-none focus:shadow"
+      tabIndex="0"
+    >
       <div
         onClick={() => setShowModal(true)}
         className="min-h-10 bg-white flex flex-col min-w-xs max-w-xs border rounded-md pt-3 p-5 m-auto break-all hover:shadow-md transition h-full"
       >
-        <div className="flex justify-between ">
+        <div className="flex justify-between">
           {list.title.length === 0 && list.body.length === 0 ? (
-            <h3>EMPTY</h3>
+            <h2>Empty note</h2>
           ) : (
             <p className=" font-roboto text-base sm:text-sm md:text-sm lg:text-sm">
               <strong>{list.title}</strong>
@@ -33,43 +37,6 @@ const ListDetail = ({ list }) => {
 
 export default ListDetail;
 
-// <div className=" cursor-pointer">II</div>
-
-// <section>
-// {list.title.length === 0 && list.body.length === 0 ? (
-//    <div
-//     onClick={() => setShowModal(true)}
-//     className="min-h-10 bg-white flex flex-col min-w-xs max-w-xs border rounded-md p-3 m-auto break-words hover:shadow-md transition h-full"
-//   >
-//     <div className="flex justify-between">
-//       {list.title.length === 0 ? (
-//         <React.Fragment></React.Fragment>
-//       ) : (
-//         <p className="px-1.5">
-//           <strong>{list.title}</strong>
-//         </p>
-//       )}
-//     </div>
-
-//     <p className="px-1.5">{list.body}</p>
-//   </div>
-// ) : (
-//   <div
-//     onClick={() => setShowModal(true)}
-//     className="min-h-10 bg-white flex flex-col min-w-xs max-w-xs border rounded-md p-3 m-auto break-words hover:shadow-md transition h-full"
-//   >
-//     <div className="flex justify-between">
-//       {list.title.length === 0 ? (
-//         <React.Fragment></React.Fragment>
-//       ) : (
-//         <p className="px-1.5">
-//           <strong>{list.title}</strong>
-//         </p>
-//       )}
-//     </div>
-
-//     <p className="px-1.5">{list.body}</p>
-//   </div>
-// )}
-// <Modal list={list} showModal={showModal} setShowModal={setShowModal} />
-// </section>
+// <div className="absolute bottom-0 right-0 p-1.5 m-2 cursor-pointer bg-gray-100 hover:bg-gray-200 transition rounded">
+//           <Edit />
+//         </div>
