@@ -44,12 +44,12 @@ const InputArea = () => {
               value={inputTitle}
               onChange={(e) => setInputTitle(e.target.value)}
               onFocus={() => setShowInput(true)}
-              className="font-medium px-1 pt-1 py-1 outline-none font-roboto text-base sm:text-sm md:text-xs lg:text-xs"
+              className="font-medium px-1 pt-1 py-1 outline-none font-roboto text-base sm:text-sm md:text-sm lg:text-sm"
             />
           )}
 
           <textarea
-            className="font-medium px-1 mt-1 my-2 outline-none font-roboto text-base sm:text-sm md:text-xs lg:text-xs"
+            className="font-medium px-1 mt-1 my-2 outline-none font-roboto text-base sm:text-sm md:text-sm lg:text-sm"
             type="text"
             rows="3"
             cols="20"
@@ -80,6 +80,5 @@ const InputArea = () => {
     </main>
   );
 };
-
 
 export default InputArea;
