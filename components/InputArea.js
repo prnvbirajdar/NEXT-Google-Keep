@@ -32,22 +32,9 @@ const InputArea = () => {
     };
   }, []);
 
-  const placeholderFont = {::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: pink;
-  }
-  ::-moz-placeholder { /* Firefox 19+ */
-    color: pink;
-  }
-  :-ms-input-placeholder { /* IE 10+ */
-    color: pink;
-  }
-  :-moz-placeholder { /* Firefox 18- */
-    color: pink;
-  }}
-
   return (
     <main className="bg-white border rounded-md overflow-hidden w-3/4 sm:max-w-md md:max-w-md lg:max-w-lg mx-auto mt-10 mb-5 shadow-md transition cursor-text">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="px-2 pt-2 pb-1">
         <div className="flex flex-col ">
           {showInput && (
             <input
@@ -57,12 +44,12 @@ const InputArea = () => {
               value={inputTitle}
               onChange={(e) => setInputTitle(e.target.value)}
               onFocus={() => setShowInput(true)}
-              className="pl-3 pt-1 outline-none font-roboto"
+              className="font-medium px-1 pt-1 py-1 outline-none font-roboto text-base sm:text-sm md:text-xs lg:text-xs"
             />
           )}
 
           <textarea
-            className="pl-3 pt-2 outline-none font-roboto"
+            className="font-medium px-1 mt-1 my-2 outline-none font-roboto text-base sm:text-sm md:text-xs lg:text-xs"
             type="text"
             rows="3"
             cols="20"
@@ -70,17 +57,18 @@ const InputArea = () => {
             value={inputBody}
             onChange={(e) => setInputBody(e.target.value)}
             onFocus={() => setShowInput(true)}
+            style={{ resize: "none" }}
           />
         </div>
 
         {inputTitle || inputBody ? (
-          <div className="flex justify-end p-0 m-0">
+          <div className="flex justify-end m-0">
             <button
               onFocus={() => setShowInput(true)}
               type="submit"
               tabIndex="0"
               disabled={!inputBody && !inputTitle}
-              className="font-std text-gray-700 bg-gray-100 rounded-md px-3 py-1 mr-1 mb-1 md:px-4 md:py-1 md:mr-1.5 md:mb-1.5 transition select-none hover:bg-gray-200 focus:bg-gray-200 focus:outline-none"
+              className="font-bold text-xs font-roboto text-gray-700 bg-gray-100 rounded-md px-5 py-2 mr-1 mb-1 md:mr-1.5 md:mb-1.5 transition select-none hover:bg-gray-200 focus:bg-gray-200 focus:outline-none"
             >
               Done
             </button>

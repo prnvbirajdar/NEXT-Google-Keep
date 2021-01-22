@@ -37,43 +37,41 @@ const Modal = ({ list, showModal, setShowModal }) => {
           <div
             onClick={closeModal}
             ref={modalRef}
-            className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+            className="ustify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
           >
-            <main className="bg-white border rounded-md overflow-hidden w-3/4 sm:max-w-md md:max-w-md lg:max-w-lg mx-auto mt-10 mb-5 shadow-md transition cursor-text">
-              <form onSubmit={handleSubmit}>
-                <div className="flex flex-col ">
+            <main className="bg-white break-all p-3 pb-1 rounded-md overflow-hidden h-72 w-full sm:w-3/4 sm:max-w-md md:max-w-md lg:max-w-lg mx-auto mt-10 mb-5 shadow-md transition cursor-text">
+              <form onSubmit={handleSubmit} className="py-2 pb-1">
+                <div className="flex flex-col">
                   {
                     <input
                       type="text"
                       placeholder="Title"
                       onChange={handleTitleChange}
-                      className="pl-3 pt-1 outline-none font-std"
+                      className="font-bold px-2 pt-1 outline-none pb-2 font-roboto text-base sm:text-sm md:text-sm lg:text-sm"
                       value={modalTitle}
                     />
                   }
 
                   <textarea
                     value={modalBody}
-                    className="pl-3 pt-2 outline-none font-std"
+                    className="font-normal px-2 pt-2 outline-none font-roboto text-base sm:text-sm md:text-sm lg:text-sm"
                     type="text"
-                    rows="4"
+                    rows="6"
                     cols="20"
                     placeholder="Take a note..."
                     onChange={handleBodyChange}
+                    style={{ resize: "none" }}
                   />
                 </div>
 
-                <div className="flex justify-between">
-                  <button
-                    className="pb-2 pl-3"
-                    onClick={() => removeList(list.id)}
-                  >
+                <div className="flex justify-between pt-9 sm:pt-16 md:pt-16">
+                  <button className="" onClick={() => removeList(list.id)}>
                     X
                   </button>
                   <button
                     type="submit"
                     tabIndex="0"
-                    className="font-std text-gray-700 bg-gray-100 rounded-md px-3 py-1 mr-1 mb-1 md:px-4 md:py-1 md:mr-1.5 md:mb-1.5 transition select-none hover:bg-gray-200 focus:bg-gray-200 focus:outline-none"
+                    className="font-bold text-xs font-std text-gray-700 bg-gray-100 rounded-md px-5 py-2 transition select-none hover:bg-gray-200 focus:bg-gray-200 focus:outline-none"
                   >
                     Done
                   </button>
