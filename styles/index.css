@@ -8,7 +8,9 @@
 
 html,
 body {
-  @apply bg-white dark:bg-gray-900;
+  min-height: 100vh;
+
+  @apply bg-white dark:bg-background;
 }
 
 /* Write your own custom component styles here */

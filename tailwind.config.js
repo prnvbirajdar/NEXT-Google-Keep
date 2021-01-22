@@ -1,8 +1,16 @@
 module.exports = {
   purge: ["./components/**/*.{js,ts,jsx,tsx}", "./pages/**/*.{js,ts,jsx,tsx}"],
-  darkMode: "media", // 'media' or 'class'
+  darkMode: "class", // 'media' or 'class'
   theme: {
     extend: {
+      backgroundColor: (theme) => ({
+        ...theme("colors"),
+        background: "#202124",
+      }),
+      textColor: (theme) => theme("colors"),
+      textColor: {
+        offwhite: "#e1e1e2",
+      },
       colors: {
         "accent-1": "#333",
       },

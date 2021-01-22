@@ -38,9 +38,9 @@ const Modal = ({ list, showModal, setShowModal }) => {
           <div
             onClick={closeModal}
             ref={modalRef}
-            className="ustify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+            className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
           >
-            <main className="bg-white break-all p-3 pb-1 rounded-md overflow-hidden h-72 w-full sm:w-3/4 sm:max-w-md md:max-w-md lg:max-w-lg mx-auto mt-10 mb-5 shadow-md transition cursor-text">
+            <main className="border dark:border-gray-400 dark:bg-background  bg-white break-all p-3 pb-1 rounded-md overflow-hidden h-72 w-full sm:w-3/4 sm:max-w-md md:max-w-md lg:max-w-lg mx-auto mt-10 mb-5 shadow-md transition cursor-text">
               <form onSubmit={handleSubmit} className="py-2 pb-1">
                 <div className="flex flex-col">
                   {
@@ -48,14 +48,14 @@ const Modal = ({ list, showModal, setShowModal }) => {
                       type="text"
                       placeholder="Title"
                       onChange={handleTitleChange}
-                      className="font-bold px-2 pt-1 outline-none pb-2 font-roboto text-base sm:text-sm md:text-sm lg:text-sm"
+                      className="dark:text-offwhite dark:bg-background  font-bold px-2 pt-1 outline-none pb-2 font-roboto text-base sm:text-sm md:text-sm lg:text-sm"
                       value={modalTitle}
                     />
                   }
 
                   <textarea
                     value={modalBody}
-                    className="font-normal px-2 pt-2 outline-none font-roboto text-base sm:text-sm md:text-sm lg:text-sm"
+                    className="dark:text-offwhite dark:bg-background font-normal px-2 pt-2 outline-none font-roboto text-base sm:text-sm md:text-sm lg:text-sm"
                     type="text"
                     rows="6"
                     cols="20"
@@ -68,7 +68,7 @@ const Modal = ({ list, showModal, setShowModal }) => {
                 <div className="flex justify-between pt-9 sm:pt-16 md:pt-16">
                   <div
                     tabIndex="0"
-                    className="cursor-pointer self-end p-2.5 bg-gray-100 hover:bg-gray-200 focus:bg-gray-200 transition rounded select-none focus:outline-none"
+                    className="cursor-pointer self-end p-2.5 bg-gray-100 hover:bg-gray-200 focus:bg-gray-200 transition rounded select-none focus:outline-none dark:text-offwhite dark:bg-background "
                     onClick={() => removeList(list.id)}
                   >
                     <Delete />
@@ -76,7 +76,7 @@ const Modal = ({ list, showModal, setShowModal }) => {
                   <button
                     type="submit"
                     tabIndex="0"
-                    className="font-bold text-xs font-std text-gray-700 bg-gray-100 rounded-md px-5 py-2 transition select-none hover:bg-gray-200 focus:bg-gray-200 focus:outline-none"
+                    className="font-bold text-xs font-std text-gray-700 bg-gray-100 rounded-md px-5 py-2 transition select-none hover:bg-gray-200 focus:bg-gray-200 focus:outline-none dark:text-offwhite dark:bg-background "
                   >
                     Done
                   </button>
