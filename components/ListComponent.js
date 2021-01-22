@@ -3,14 +3,16 @@ import { ListContext } from "../assets/contexts/ListContext";
 import ListDetail from "./ListDetail";
 
 const ListComponent = () => {
-  const { list } = useContext(ListContext);
+  const { mainList } = useContext(ListContext);
 
-  return list.length ? (
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-x-4 gap-y-5 mx-4 sm:mx-12 ">
-        {[...list].reverse().map((l) => {
-          return <ListDetail list={l} key={l.id} />;
-        })}
-      </div>
+  console.log(mainList);
+
+  return mainList.length ? (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-5 gap-x-4 gap-y-5 mx-4 sm:mx-12 ">
+      {[...mainList].reverse().map((l) => {
+        return <ListDetail list={l} key={l.id} />;
+      })}
+    </div>
   ) : (
     <div></div>
   );

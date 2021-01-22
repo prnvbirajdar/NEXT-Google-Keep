@@ -6,6 +6,15 @@ module.exports = {
       colors: {
         "accent-1": "#333",
       },
+      minHeight: {
+        10: "10rem",
+        20: "20rem",
+        30: "30rem",
+        40: "40rem",
+        50: "50rem",
+        60: "60rem",
+        70: "70rem",
+      },
       maxWidth: {
         250: "250px",
         275: "275px",

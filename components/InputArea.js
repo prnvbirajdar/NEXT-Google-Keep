@@ -15,6 +15,7 @@ const InputArea = () => {
     addList(inputTitle, inputBody);
     setInputBody("");
     setInputTitle("");
+    setShowInput(false);
   };
 
   const handleClickOutside = (e) => {
@@ -62,6 +63,7 @@ const InputArea = () => {
         {inputTitle || inputBody ? (
           <div className="flex justify-end p-0 m-0">
             <button
+              onFocus={() => setShowInput(true)}
               type="submit"
               tabIndex="0"
               disabled={!inputBody && !inputTitle}
@@ -78,7 +80,7 @@ const InputArea = () => {
   );
 };
 
-// bg-gray-100 text-gray-700 active:bg-gray-200 hover:bg-gray-200 font-bold uppercase text-sm px-5 py-2 rounded outline-none focus:outline-none 
+// bg-gray-100 text-gray-700 active:bg-gray-200 hover:bg-gray-200 font-bold uppercase text-sm px-5 py-2 rounded outline-none focus:outline-none
 
 export default InputArea;
 

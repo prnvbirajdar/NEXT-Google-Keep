@@ -4,18 +4,22 @@ import { v4 as uuidv4 } from "uuid";
 export const ListContext = createContext();
 
 const ListContextProvider = (props) => {
-  const [list, setList] = useState([]);
+  const [mainList, setMainList] = useState([]);
 
   const addList = (title, body) => {
-    setList([...list, { title, body, id: uuidv4() }]);
+    setMainList([...mainList, { title, body, id: uuidv4() }]);
   };
 
   const removeList = (id) => {
-    setList(list.filter((l) => l.id !== id));
+    setMainList(mainList.filter((l) => l.id !== id));
+  };
+
+  const updateList = (title, body, id) => {
+    setMainList(mainList.map((l) => (l.id === id ? { title, body, id } : l)));
   };
 
   return (
-    <ListContext.Provider value={{ list, addList, removeList }}>
+    <ListContext.Provider value={{ mainList, addList, removeList, updateList }}>
       {props.children}
     </ListContext.Provider>
   );
