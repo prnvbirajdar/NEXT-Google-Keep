@@ -8,12 +8,6 @@ module.exports = {
       },
       minHeight: {
         10: "10rem",
-        20: "20rem",
-        30: "30rem",
-        40: "40rem",
-        50: "50rem",
-        60: "60rem",
-        70: "70rem",
       },
       maxWidth: {
         250: "250px",
@@ -23,6 +17,10 @@ module.exports = {
       gridTemplateColumns: {
         // Complex site-specific column configuration
         list: "repeat(auto-fit, minmax(270px, 1fr))",
+      },
+      fontFamily: {
+        std: '"Open Sans", Helvetica, Arial, sans-serif',
+        roboto: '"Roboto", sans-serif',
       },
     },
   },

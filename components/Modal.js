@@ -16,7 +16,6 @@ const Modal = ({ list, showModal, setShowModal }) => {
     }
   };
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
     updateList(modalTitle, modalBody, list.id);
@@ -48,14 +47,14 @@ const Modal = ({ list, showModal, setShowModal }) => {
                       type="text"
                       placeholder="Title"
                       onChange={handleTitleChange}
-                      className="pl-3 pt-1 outline-none"
+                      className="pl-3 pt-1 outline-none font-std"
                       value={modalTitle}
                     />
                   }
 
                   <textarea
                     value={modalBody}
-                    className="pl-3 pt-2 outline-none"
+                    className="pl-3 pt-2 outline-none font-std"
                     type="text"
                     rows="4"
                     cols="20"
@@ -74,7 +73,7 @@ const Modal = ({ list, showModal, setShowModal }) => {
                   <button
                     type="submit"
                     tabIndex="0"
-                    className="text-gray-700 bg-gray-100 rounded-md px-3 py-1 mr-1 mb-1 md:px-4 md:py-1 md:mr-1.5 md:mb-1.5 transition select-none hover:bg-gray-200 focus:bg-gray-200 focus:outline-none"
+                    className="font-std text-gray-700 bg-gray-100 rounded-md px-3 py-1 mr-1 mb-1 md:px-4 md:py-1 md:mr-1.5 md:mb-1.5 transition select-none hover:bg-gray-200 focus:bg-gray-200 focus:outline-none"
                   >
                     Done
                   </button>

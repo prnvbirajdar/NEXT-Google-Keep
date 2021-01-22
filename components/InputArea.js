@@ -32,6 +32,19 @@ const InputArea = () => {
     };
   }, []);
 
+  const placeholderFont = {::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: pink;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: pink;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: pink;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: pink;
+  }}
+
   return (
     <main className="bg-white border rounded-md overflow-hidden w-3/4 sm:max-w-md md:max-w-md lg:max-w-lg mx-auto mt-10 mb-5 shadow-md transition cursor-text">
       <form onSubmit={handleSubmit}>
@@ -44,12 +57,12 @@ const InputArea = () => {
               value={inputTitle}
               onChange={(e) => setInputTitle(e.target.value)}
               onFocus={() => setShowInput(true)}
-              className="pl-3 pt-1 outline-none"
+              className="pl-3 pt-1 outline-none font-roboto"
             />
           )}
 
           <textarea
-            className="pl-3 pt-2 outline-none"
+            className="pl-3 pt-2 outline-none font-roboto"
             type="text"
             rows="3"
             cols="20"
@@ -67,7 +80,7 @@ const InputArea = () => {
               type="submit"
               tabIndex="0"
               disabled={!inputBody && !inputTitle}
-              className="text-gray-700 bg-gray-100 rounded-md px-3 py-1 mr-1 mb-1 md:px-4 md:py-1 md:mr-1.5 md:mb-1.5 transition select-none hover:bg-gray-200 focus:bg-gray-200 focus:outline-none"
+              className="font-std text-gray-700 bg-gray-100 rounded-md px-3 py-1 mr-1 mb-1 md:px-4 md:py-1 md:mr-1.5 md:mb-1.5 transition select-none hover:bg-gray-200 focus:bg-gray-200 focus:outline-none"
             >
               Done
             </button>
