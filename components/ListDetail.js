@@ -14,7 +14,7 @@ const ListDetail = ({ list }) => {
     >
       <div
         onClick={() => setShowModal(true)}
-        className="min-h-10 bg-white flex flex-col min-w-xs max-w-xs border rounded-md pt-3 p-5 m-auto break-all hover:shadow-md transition h-full"
+        className="min-h-10 bg-white flex flex-col min-w-xs max-w-xs border rounded-md pt-3 p-5 m-auto break-words hover:shadow-md transition h-full"
       >
         <div className="flex justify-between">
           {list.title.length === 0 && list.body.length === 0 ? (
