@@ -4,6 +4,7 @@ import KeepIcon from "./IconComponents/KeepIcon";
 import Moon from "./IconComponents/Moon";
 import Sun from "./IconComponents/Sun";
 
+
 const Navbar = () => {
   const { dark, toggleDark, setDark } = useContext(ThemeContext);
 
@@ -15,7 +16,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-screen flex flex-row items-center p-1.5 md:px-4 justify-between bg-white shadow dark:bg-background border-b dark:border-gray-600 z-20 fixed top-0">
+    <div className=" transition duration-300 w-screen flex flex-row items-center p-1.5 md:px-4 justify-between bg-white shadow dark:bg-background border-b dark:border-gray-600 z-20 fixed top-0">
       <div className="flex">
         <KeepIcon />
         <p className=" text-xl  self-center font-medium text-gray-700 ml-1  dark:text-offwhite">

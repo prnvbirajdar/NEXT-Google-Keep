@@ -33,7 +33,7 @@ const InputArea = () => {
   }, []);
 
   return (
-    <main className="relative border dark:border-gray-500 dark:hover:border-gray-300  bg-white dark:bg-background border rounded-md overflow-hidden w-3/4 sm:max-w-md md:max-w-md lg:max-w-lg mx-auto mt-10 mb-5 shadow-md transition cursor-text">
+    <main className="transition duration-300 relative border dark:border-gray-500 dark:hover:border-gray-300  bg-white dark:bg-background border rounded-md overflow-hidden w-3/4 sm:max-w-md md:max-w-md lg:max-w-lg mx-auto mt-10 mb-5 shadow-md transition cursor-text">
       <form onSubmit={handleSubmit} className="px-2 pt-2 pb-1">
         <div className="flex flex-col ">
           {showInput && (
@@ -44,12 +44,12 @@ const InputArea = () => {
               value={inputTitle}
               onChange={(e) => setInputTitle(e.target.value)}
               onFocus={() => setShowInput(true)}
-              className="font-medium px-1 pt-1 py-1 outline-none font-roboto text-base sm:text-sm md:text-sm lg:text-sm dark:bg-background dark:text-offwhite"
+              className=" transition duration-300 font-medium px-1 pt-1 py-1 outline-none font-roboto text-base sm:text-sm md:text-sm lg:text-sm dark:bg-background dark:text-offwhite"
             />
           )}
 
           <textarea
-            className="font-medium px-1 mt-1 my-2 outline-none font-roboto text-base sm:text-sm md:text-sm lg:text-sm dark:bg-background dark:text-offwhite"
+            className="transition duration-300 font-medium px-1 mt-1 my-2 outline-none font-roboto text-base sm:text-sm md:text-sm lg:text-sm dark:bg-background dark:text-offwhite"
             type="text"
             rows="3"
             cols="20"
@@ -68,7 +68,7 @@ const InputArea = () => {
               type="submit"
               tabIndex="0"
               disabled={!inputBody && !inputTitle}
-              className="font-bold text-xs font-roboto text-gray-700 bg-gray-100 rounded-md px-5 py-2 mr-1 mb-1 md:mr-1.5 md:mb-1.5 transition select-none hover:bg-gray-200 focus:bg-gray-200 focus:outline-none"
+              className="transition duration-300 font-bold text-xs font-roboto text-gray-700 bg-gray-100 rounded-md px-5 py-2 mr-1 mb-1 md:mr-1.5 md:mb-1.5 transition select-none hover:bg-gray-200 focus:bg-gray-200 focus:outline-none dark:text-offwhite dark:bg-gray-700 dark:hover:bg-gray-600"
             >
               Done
             </button>

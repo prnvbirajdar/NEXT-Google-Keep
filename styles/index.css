@@ -10,7 +10,7 @@ html,
 body {
   min-height: 100vh;
 
-  @apply bg-white dark:bg-background;
+  @apply bg-white dark:bg-background transition duration-300;
 }
 
 /* Write your own custom component styles here */
