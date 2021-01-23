@@ -1,7 +1,6 @@
 const Edit = () => {
   return (
     <div>
-      {" "}
       <svg
         height="18px"
         version="1.1"

@@ -1,9 +1,18 @@
 import { useContext } from "react";
 import ThemeContext from "../Theme/ThemeContext";
 import KeepIcon from "./IconComponents/KeepIcon";
+import Moon from "./IconComponents/Moon";
+import Sun from "./IconComponents/Sun";
 
 const Navbar = () => {
-  const { dark, toggleDark } = useContext(ThemeContext);
+  const { dark, toggleDark, setDark } = useContext(ThemeContext);
+
+  console.log(dark);
+
+  const handleClick = () => {
+    setDark(dark === true ? false : true);
+    toggleDark();
+  };
 
   return (
     <div className="w-screen flex flex-row items-center p-1.5 md:px-4 justify-between bg-white shadow dark:bg-background border-b dark:border-gray-600 z-20 fixed top-0">
@@ -14,9 +23,15 @@ const Navbar = () => {
         </p>
       </div>
 
-      <div className="btn-blue" onClick={() => toggleDark()}>
-        {dark ? "Light" : "Dark"} Theme
-      </div>
+      {dark ? (
+        <div onClick={handleClick}>
+          <Sun />
+        </div>
+      ) : (
+        <div onClick={handleClick}>
+          <Moon />
+        </div>
+      )}
     </div>
   );
 };

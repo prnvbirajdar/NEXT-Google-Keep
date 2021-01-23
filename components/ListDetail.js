@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Edit from "./IconComponents/Edit";
 import Modal from "./Modal";
 
 const ListDetail = ({ list }) => {
