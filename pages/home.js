@@ -5,12 +5,13 @@ import ListComponent from "../components/ListComponent";
 import Navbar from "../components/Navbar";
 
 const Home = () => {
-    
+
 
   return (
     <React.Fragment>
       <ListContextProvider>
         <Navbar />
+        <div className="pt-16"></div>
         <InputArea />
         <ListComponent />
       </ListContextProvider>

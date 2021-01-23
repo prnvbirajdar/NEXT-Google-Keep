@@ -6,10 +6,10 @@ const Navbar = () => {
   const { dark, toggleDark } = useContext(ThemeContext);
 
   return (
-    <div className="w-screen flex flex-row items-center p-1.5 md:px-4 justify-between bg-white shadow">
+    <div className="w-screen flex flex-row items-center p-1.5 md:px-4 justify-between bg-white shadow dark:bg-background border-b dark:border-gray-600 z-20 fixed top-0">
       <div className="flex">
         <KeepIcon />
-        <p className=" text-xl md:text-2xl self-center font-medium text-gray-700 ml-1">
+        <p className=" text-xl  self-center font-medium text-gray-700 ml-1  dark:text-offwhite">
           Keep
         </p>
       </div>

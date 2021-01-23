@@ -1,9 +1,12 @@
 import React, { createContext, useEffect, useState } from "react";
+
 const defaultState = {
   dark: false,
   toggleDark: () => {},
 };
+
 const ThemeContext = createContext(defaultState);
+
 const ThemeProvider = ({ children }) => {
   const [dark, setDark] = useState(false);
   useEffect(() => {
@@ -24,6 +27,7 @@ const ThemeProvider = ({ children }) => {
     localStorage.setItem("dark", JSON.stringify(!dark));
     setDark(!dark);
   };
+  
   return (
     <ThemeContext.Provider
       value={{
@@ -35,5 +39,6 @@ const ThemeProvider = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
+
 export default ThemeContext;
 export { ThemeProvider };
