@@ -68,7 +68,7 @@ const Modal = ({ list, showModal, setShowModal }) => {
                 <div className="flex justify-between pt-9 sm:pt-16 md:pt-16">
                   <div
                     tabIndex="0"
-                    className="cursor-pointer self-end p-2 bg-gray-100 hover:bg-gray-200 focus:bg-gray-200 transition rounded select-none focus:outline-none dark:text-offwhite dark:bg-background dark:hover:bg-gray-50 "
+                    className="cursor-pointer self-end p-2 bg-gray-100 hover:bg-gray-200 focus:bg-gray-200 transition rounded select-none focus:outline-none dark:text-offwhite dark:bg-background dark:hover:bg-gray-200 "
                     onClick={() => removeList(list.id)}
                   >
                     <Delete />

@@ -6,7 +6,7 @@ const ListDetail = ({ list }) => {
 
   return (
     <section
-      className="cursor-pointer focus:outline-none focus:shadow transition duration-300"
+      className="cursor-pointer focus:outline-none focus:ring-1 focus:ring-gray-400 rounded transition duration-300"
       tabIndex="0"
     >
       <div
