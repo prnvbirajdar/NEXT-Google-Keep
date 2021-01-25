@@ -1,15 +1,17 @@
-import Nav from '../components/nav'
+import ListContextProvider from "../assets/contexts/ListContext";
+import InputArea from "../components/InputArea";
+import ListComponent from "../components/ListComponent";
+import Navbar from "../components/Navbar";
 
 export default function IndexPage() {
   return (
-    <div>
-      <Nav />
-      <div className="py-20">
-        <h1 className="text-5xl text-center text-gray-700 dark:text-gray-100">
-          Next.js + Tailwind CSS 2.0
-        </h1>
-      </div>
-    </div>
-  )
+    <React.Fragment>
+      <ListContextProvider>
+        <Navbar />
+        <div className="pt-16"></div>
+        <InputArea />
+        <ListComponent />
+      </ListContextProvider>
+    </React.Fragment>
+  );
 }
-
