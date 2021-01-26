@@ -1,40 +1,32 @@
-
-
 import firebase from "firebase/app";
-//import "firebase/storage";
 import "firebase/firestore";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBebE_zJuIjrwY018dDVStI7IN-FCzTtqY",
-  authDomain: "next--keep-clone.firebaseapp.com",
-  databaseURL: "https://next--keep-clone-default-rtdb.firebaseio.com",
-  projectId: "next--keep-clone",
-  storageBucket: "next--keep-clone.appspot.com",
-  messagingSenderId: "930767906956",
-  appId: "1:930767906956:web:a623703b603f54f2d7f3a9",
-  measurementId: "G-6EGV0EYRKL",
-};
-
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
 
 // const firebaseApp = firebase.initializeApp({
-//   apiKey: "AIzaSyBebE_zJuIjrwY018dDVStI7IN-FCzTtqY",
-//   authDomain: "next--keep-clone.firebaseapp.com",
-//   databaseURL: "https://next--keep-clone-default-rtdb.firebaseio.com",
-//   projectId: "next--keep-clone",
-//   storageBucket: "next--keep-clone.appspot.com",
-//   messagingSenderId: "930767906956",
-//   appId: "1:930767906956:web:a623703b603f54f2d7f3a9",
-//   measurementId: "G-6EGV0EYRKL",
+//   apiKey: "AIzaSyCXTLkYc-K7x2wdU81g8c_aK1LezqnRWAU",
+//   authDomain: "keep-next-tailwind.firebaseapp.com",
+//   databaseURL: "https://keep-next-tailwind-default-rtdb.firebaseio.com",
+//   projectId: "keep-next-tailwind",
+//   storageBucket: "keep-next-tailwind.appspot.com",
+//   messagingSenderId: "318071216631",
+//   appId: "1:318071216631:web:e235550f574e898b6eb6f2",
 // });
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCXTLkYc-K7x2wdU81g8c_aK1LezqnRWAU",
+  authDomain: "keep-next-tailwind.firebaseapp.com",
+  databaseURL: "https://keep-next-tailwind-default-rtdb.firebaseio.com",
+  projectId: "keep-next-tailwind",
+  storageBucket: "keep-next-tailwind.appspot.com",
+  messagingSenderId: "318071216631",
+  appId: "1:318071216631:web:e235550f574e898b6eb6f2",
+};
 // Initialize Firebase
-//firebase.analytics();
+if (firebase.apps.length === 0) {
+  firebase.initializeApp(firebaseConfig);
+}
 
-// const db = firebaseApp.firestore();
-// const projectStorage = firebase.storage();
+const db = firebase.firestore();
 
-// export { db, projectStorage };
-
-export default firebase;
+export default db;

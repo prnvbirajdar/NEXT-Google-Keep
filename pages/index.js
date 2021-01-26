@@ -3,6 +3,7 @@ import InputArea from "../components/InputArea";
 import ListComponent from "../components/ListComponent";
 import Navbar from "../components/Navbar";
 
+
 export default function IndexPage() {
   return (
     <React.Fragment>
