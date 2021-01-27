@@ -15,21 +15,19 @@ export const ListContext = createContext();
 const ListContextProvider = (props) => {
   const [mainList, setMainList] = useState([]);
 
-  console.log(mainList);
-
   useEffect(() => {
     db.collection("keepList").onSnapshot((snapshot) => {
       const dbData = snapshot.docs.map((doc) => doc.data());
       console.log(dbData);
-      dbData.map(({ title, body }) =>
-        setMainList([...mainList, { title, body }])
-      );
+      dbData.map(({ title, body }) => setMainList([{ title, body }]));
       //setMainList(snapshot.docs.map((doc) => doc.data().data));
     });
   }, []);
 
   const addList = (title, body) => {
-    setMainList([...mainList, { title, body, id: uuidv4() }]);
+    db.collection("keepList").add({ title, body });
+
+    //setMainList([...mainList, { title, body, id: uuidv4() }]);
   };
 
   const removeList = (id) => {
@@ -39,6 +37,8 @@ const ListContextProvider = (props) => {
   const updateList = (title, body, id) => {
     setMainList(mainList.map((l) => (l.id === id ? { title, body, id } : l)));
   };
+
+  console.log(mainList);
 
   return (
     <ListContext.Provider value={{ mainList, addList, removeList, updateList }}>
