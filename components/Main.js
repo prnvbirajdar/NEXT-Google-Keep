@@ -12,18 +12,19 @@ const Main = () => {
 
   const getKeepList = () => {
     db.collection("keepList").onSnapshot((querySnapshot) => {
-     setMainTodoList( querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        title: doc.data().title,
-        body: doc.data().body,
-      })))
+      setMainTodoList(
+        querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          title: doc.data().title,
+          body: doc.data().body,
+        }))
+      );
     });
   };
 
-  mainTodoList.map(list=>{
-      console.log(list.body);
-  })
-
+  mainTodoList.map((list) => {
+    console.log(list);
+  });
 
   return (
     <React.Fragment>
@@ -32,15 +33,17 @@ const Main = () => {
         setMainTodoList={setMainTodoList}
       />
 
-    {mainTodoList.map(list=>{
-        <p>{list.body}</p>
-    })}
+      {mainTodoList.map((list) => {
+        <div>
+          <p>{list.title}</p>
+          <p>{list.body}</p>
+        </div>;
+      })}
 
-
-    {/*  <ListComponent
+       <ListComponent
         mainTodoList={mainTodoList}
         setMainTodoList={setMainTodoList}
-    />*/}
+    />
     </React.Fragment>
   );
 };
