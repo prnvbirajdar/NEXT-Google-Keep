@@ -1,4 +1,6 @@
 import { useState, useContext, useRef, useEffect } from "react";
+import db from "../assets/firebase/firebase";
+import firebase from "firebase";
 //import { ListContext } from "../assets/contexts/ListContext";
 
 const InputArea = ({ mainTodoList, setMainTodoList }) => {
@@ -12,11 +14,20 @@ const InputArea = ({ mainTodoList, setMainTodoList }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addList(inputTitle, inputBody);
+
+    db.collection("keepList").add({
+      title: inputTitle,
+      body: inputBody,
+      timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });
+
+    // addList(inputTitle, inputBody);
     setInputBody("");
     setInputTitle("");
     setShowInput(false);
   };
+
+  console.log(db.collection("keepList"));
 
   const handleClickOutside = (e) => {
     const { current: wrap } = titleRef;

@@ -15,20 +15,20 @@ export const ListContext = createContext();
 const ListContextProvider = (props) => {
   const [mainList, setMainList] = useState([]);
 
-  useEffect(() => {
-    db.collection("keepList").onSnapshot((snapshot) => {
-      const dbData = snapshot.docs.map((doc) => doc.data());
-      console.log(dbData);
-      dbData.map(({ title, body }) => setMainList([{ title, body }]));
-      //setMainList(snapshot.docs.map((doc) => doc.data().data));
-    });
-  }, []);
+  // useEffect(() => {
+  //   db.collection("keepList").onSnapshot((snapshot) => {
+  //     const dbData = snapshot.docs.map((doc) => doc.data());
+  //     console.log(dbData);
+  //     dbData.map(({ title, body }) => setMainList([{ title, body }]));
+  //     //setMainList(snapshot.docs.map((doc) => doc.data().data));
+  //   });
+  // }, []);
 
-  const addList = (title, body) => {
-    db.collection("keepList").add({ title, body });
+  // const addList = (title, body) => {
+  //   db.collection("keepList").add({ title, body });
 
-    //setMainList([...mainList, { title, body, id: uuidv4() }]);
-  };
+  //   //setMainList([...mainList, { title, body, id: uuidv4() }]);
+  // };
 
   const removeList = (id) => {
     setMainList(mainList.filter((l) => l.id !== id));
