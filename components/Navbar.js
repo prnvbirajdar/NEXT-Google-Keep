@@ -41,12 +41,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-// <span className="w-screen md:w-1/3 h-10 cursor-pointer text-sm flex">
-// <input
-//   type="search"
-//   name="serch"
-//   placeholder="Search"
-//   className="flex-grow px-4 rounded text-sm focus:outline-none"
-// />
-// </span>

@@ -8,8 +8,9 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
+          <link rel="Keep Clone Icon" type="image/png" href="/keep48.png" />
           <script
             dangerouslySetInnerHTML={{
               __html: `
