@@ -1,15 +1,10 @@
-import { useState, useContext, useRef } from "react";
+import { useState, useRef } from "react";
 import db from "../assets/firebase/firebase";
-//import { ListContext } from "../assets/contexts/ListContext";
 import Delete from "./IconComponents/Delete";
 
 const Modal = ({ title, body, id, showModal, setShowModal }) => {
   const [modalTitle, setModalTitle] = useState(title);
   const [modalBody, setModalBody] = useState(body);
-
-  //const { updateList, removeList } = useContext(ListContext);
-  // console.log(title);
-  // console.log(id);
 
   const modalRef = useRef();
 
@@ -83,14 +78,14 @@ const Modal = ({ title, body, id, showModal, setShowModal }) => {
                   <div
                     onClick={() => removeTodo()}
                     tabIndex="0"
-                    className="cursor-pointer self-end p-2 bg-gray-100 hover:bg-gray-200 focus:bg-gray-200 transition rounded select-none focus:outline-none dark:text-offwhite dark:bg-background dark:hover:bg-gray-200 "
+                    className="cursor-pointer self-end p-2 bg-gray-100 hover:bg-gray-200 focus:bg-gray-200 transition rounded select-none focus:outline-none dark:text-offwhite dark:bg-background dark:hover:bg-gray-200 dark:focus:bg-gray-200 "
                   >
                     <Delete />
                   </div>
                   <button
                     type="submit"
                     tabIndex="0"
-                    className="font-bold text-xs font-std text-gray-700 bg-gray-100 rounded-md px-5 py-1.5 transition select-none hover:bg-gray-200 focus:bg-gray-200 focus:outline-none dark:text-offwhite dark:bg-gray-700 dark:hover:bg-gray-600 "
+                    className="font-bold text-xs font-std text-gray-700 bg-gray-100 rounded-md px-5 py-1.5 transition select-none hover:bg-gray-200 focus:bg-gray-200 focus:outline-none dark:text-offwhite dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:bg-gray-600 "
                   >
                     Done
                   </button>

@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { ListContext } from "../assets/contexts/ListContext";
 import ListDetail from "./ListDetail";
 
 const ListComponent = ({ mainTodoList, setMainTodoList }) => {

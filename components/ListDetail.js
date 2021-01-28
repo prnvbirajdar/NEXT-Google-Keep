@@ -4,8 +4,6 @@ import Modal from "./Modal";
 const ListDetail = ({ title, id, body }) => {
   const [showModal, setShowModal] = useState(false);
 
-  console.log(id);
-
   return (
     <section
       className="cursor-pointer focus:outline-none focus:ring-1 focus:ring-gray-400 rounded transition duration-300"
@@ -17,7 +15,9 @@ const ListDetail = ({ title, id, body }) => {
       >
         <div className="transition flex justify-between">
           {title === "" && body === "" ? (
-            <h2>Empty note</h2>
+            <p className="transition font-roboto text-lg dark:text-offwhite">
+              Empty note
+            </p>
           ) : (
             <p className="transition font-roboto text-base sm:text-sm md:text-sm lg:text-sm dark:text-offwhite ">
               <strong>{title}</strong>

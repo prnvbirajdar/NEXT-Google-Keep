@@ -24,10 +24,6 @@ const Main = () => {
       });
   };
 
-  mainTodoList.map((list) => {
-    console.log(list);
-  });
-
   return (
     <React.Fragment>
       <InputArea

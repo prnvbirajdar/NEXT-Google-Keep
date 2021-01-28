@@ -24,8 +24,8 @@ const ThemeProvider = ({ children }) => {
     } else {
       d.setAttribute("class", "dark");
     }
-    // localStorage.setItem("dark", JSON.stringify(!dark));
-    // setDark(!dark);
+    localStorage.setItem("dark", JSON.stringify(!dark));
+    setDark(!dark);
   };
 
   return (

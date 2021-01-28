@@ -1,11 +1,8 @@
-import { useState, useContext, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import db from "../assets/firebase/firebase";
 import firebase from "firebase";
-//import { ListContext } from "../assets/contexts/ListContext";
 
-const InputArea = ({ mainTodoList, setMainTodoList }) => {
-  //const { list, addList } = useContext(ListContext);
-
+const InputArea = () => {
   const [inputTitle, setInputTitle] = useState("");
   const [inputBody, setInputBody] = useState("");
   const [showInput, setShowInput] = useState(false);
@@ -44,7 +41,7 @@ const InputArea = ({ mainTodoList, setMainTodoList }) => {
   }, []);
 
   return (
-    <main className="transition duration-300 relative border dark:border-gray-500 dark:hover:border-gray-300  bg-white dark:bg-background border rounded-md overflow-hidden w-3/4 sm:max-w-md md:max-w-md lg:max-w-lg mx-auto mt-10 mb-5 shadow-md transition cursor-text">
+    <main className="transition duration-300 relative border dark:border-gray-500 dark:hover:border-gray-300  bg-white dark:bg-background rounded-md overflow-hidden w-3/4 sm:max-w-md md:max-w-md lg:max-w-lg mx-auto mt-10 mb-5 shadow-md transition cursor-text">
       <form onSubmit={handleSubmit} className="px-2 pt-2 pb-1">
         <div className="flex flex-col ">
           {showInput && (
@@ -79,7 +76,7 @@ const InputArea = ({ mainTodoList, setMainTodoList }) => {
               type="submit"
               tabIndex="0"
               disabled={!inputBody && !inputTitle}
-              className="transition duration-300 font-bold text-xs font-roboto text-gray-700 bg-gray-100 rounded-md px-5 py-2 mr-1 mb-1 md:mr-1.5 md:mb-1.5 transition select-none hover:bg-gray-200 focus:bg-gray-200 focus:outline-none dark:text-offwhite dark:bg-gray-700 dark:hover:bg-gray-600"
+              className="transition duration-300 font-bold text-xs font-roboto text-gray-700 bg-gray-100 rounded-md px-5 py-2 mr-1 mb-1 md:mr-1.5 md:mb-1.5 select-none hover:bg-gray-200 focus:bg-gray-200 focus:outline-none dark:text-offwhite dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:bg-gray-600"
             >
               Done
             </button>
