@@ -4,6 +4,8 @@ import Modal from "./Modal";
 const ListDetail = ({ title, id, body }) => {
   const [showModal, setShowModal] = useState(false);
 
+  console.log(id);
+
   return (
     <section
       className="cursor-pointer focus:outline-none focus:ring-1 focus:ring-gray-400 rounded transition duration-300"
@@ -27,13 +29,13 @@ const ListDetail = ({ title, id, body }) => {
           {body}
         </p>
       </div>
-       <Modal
+      <Modal
         title={title}
         body={body}
         id={id}
         showModal={showModal}
         setShowModal={setShowModal}
-     />
+      />
     </section>
   );
 };

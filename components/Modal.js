@@ -8,8 +8,8 @@ const Modal = ({ title, body, id, showModal, setShowModal }) => {
   const [modalBody, setModalBody] = useState(body);
 
   //const { updateList, removeList } = useContext(ListContext);
-  console.log(title);
-  console.log(id);
+  // console.log(title);
+  // console.log(id);
 
   const modalRef = useRef();
 
@@ -81,9 +81,9 @@ const Modal = ({ title, body, id, showModal, setShowModal }) => {
 
                 <div className="flex justify-between pt-9 sm:pt-16 md:pt-16">
                   <div
+                    onClick={() => removeTodo()}
                     tabIndex="0"
                     className="cursor-pointer self-end p-2 bg-gray-100 hover:bg-gray-200 focus:bg-gray-200 transition rounded select-none focus:outline-none dark:text-offwhite dark:bg-background dark:hover:bg-gray-200 "
-                    onClick={() => removeTodo()}
                   >
                     <Delete />
                   </div>
