@@ -27,13 +27,13 @@ const ListDetail = ({ title, id, body }) => {
           {body}
         </p>
       </div>
-      {/* <Modal
+       <Modal
         title={title}
         body={body}
         id={id}
         showModal={showModal}
         setShowModal={setShowModal}
-     />*/}
+     />
     </section>
   );
 };

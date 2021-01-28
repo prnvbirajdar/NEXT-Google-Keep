@@ -1,25 +1,39 @@
 import { useState, useContext, useRef } from "react";
-import { ListContext } from "../assets/contexts/ListContext";
+import db from "../assets/firebase/firebase";
+//import { ListContext } from "../assets/contexts/ListContext";
 import Delete from "./IconComponents/Delete";
 
-const Modal = ({ list, showModal, setShowModal }) => {
-  const [modalTitle, setModalTitle] = useState(list.title);
-  const [modalBody, setModalBody] = useState(list.body);
+const Modal = ({ title, body, id, showModal, setShowModal }) => {
+  const [modalTitle, setModalTitle] = useState(title);
+  const [modalBody, setModalBody] = useState(body);
 
-  const { updateList, removeList } = useContext(ListContext);
+  //const { updateList, removeList } = useContext(ListContext);
+  console.log(title);
+  console.log(id);
 
   const modalRef = useRef();
+
+  const removeTodo = () => {
+    db.collection("keepList").doc(id).delete();
+  };
+
+  const updateTodo = () => {
+    db.collection("keepList").doc(id).update({
+      title: modalTitle,
+      body: modalBody,
+    });
+  };
 
   const closeModal = (e) => {
     if (modalRef.current === e.target) {
       setShowModal(false);
-      updateList(modalTitle, modalBody, list.id);
+      updateTodo();
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateList(modalTitle, modalBody, list.id);
+    updateTodo();
     setShowModal(false);
   };
 
@@ -69,7 +83,7 @@ const Modal = ({ list, showModal, setShowModal }) => {
                   <div
                     tabIndex="0"
                     className="cursor-pointer self-end p-2 bg-gray-100 hover:bg-gray-200 focus:bg-gray-200 transition rounded select-none focus:outline-none dark:text-offwhite dark:bg-background dark:hover:bg-gray-200 "
-                    onClick={() => removeList(list.id)}
+                    onClick={() => removeTodo()}
                   >
                     <Delete />
                   </div>
@@ -92,17 +106,6 @@ const Modal = ({ list, showModal, setShowModal }) => {
 };
 
 export default Modal;
-
-
-
-
-
-
-
-
-
-
-
 
 // import { useState, useContext, useRef } from "react";
 // import { ListContext } from "../assets/contexts/ListContext";
