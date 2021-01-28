@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import ThemeContext from "../Theme/ThemeContext";
+import ThemeContext from "./Theme/ThemeContext";
 import KeepIcon from "./IconComponents/KeepIcon";
 import Moon from "./IconComponents/Moon";
 import Sun from "./IconComponents/Sun";

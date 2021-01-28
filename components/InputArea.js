@@ -18,13 +18,10 @@ const InputArea = () => {
       timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
 
-    // addList(inputTitle, inputBody);
     setInputBody("");
     setInputTitle("");
     setShowInput(false);
   };
-
-  console.log(db.collection("keepList"));
 
   const handleClickOutside = (e) => {
     const { current: wrap } = titleRef;

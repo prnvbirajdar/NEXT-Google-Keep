@@ -1,5 +1,5 @@
 import "../styles/index.css";
-import { ThemeProvider } from "../Theme/ThemeContext";
+import { ThemeProvider } from "../components/Theme/ThemeContext";
 
 function MyApp({ Component, pageProps }) {
   return (
