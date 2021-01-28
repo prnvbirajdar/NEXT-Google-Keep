@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className=" transition duration-300 w-screen flex flex-row items-center py-1.5 px-5  justify-between bg-white shadow dark:bg-background border-b dark:border-gray-600 z-20 fixed top-0">
+    <div className=" transition duration-300 w-screen flex flex-row items-center py-1.5 pl-5 pr-7  justify-between bg-white shadow dark:bg-background border-b dark:border-gray-600 z-20 fixed top-0">
       <div className="flex">
         <KeepIcon />
         <p className="transition duration-300 text-xl self-center font-medium text-gray-700 ml-1 dark:text-offwhite">
