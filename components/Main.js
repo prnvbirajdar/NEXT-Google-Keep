@@ -2,6 +2,7 @@ import db from "../assets/firebase/firebase";
 import InputArea from "../components/InputArea";
 import ListComponent from "./ListComponent";
 import { useState, useEffect } from "react";
+//import { getStaticProps } from "next";
 
 const Main = () => {
   const [mainTodoList, setMainTodoList] = useState([]);
@@ -47,3 +48,10 @@ const Main = () => {
 };
 
 export default Main;
+
+// export const getStaticProps = async () => {
+//   const content=
+
+
+
+// }
