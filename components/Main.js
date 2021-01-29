@@ -39,19 +39,9 @@ const Main = () => {
         </div>;
       })}
 
-      <ListComponent
-        mainTodoList={mainTodoList}
-        setMainTodoList={setMainTodoList}
-      />
+      <ListComponent mainTodoList={mainTodoList} />
     </React.Fragment>
   );
 };
 
 export default Main;
-
-// export const getStaticProps = async () => {
-//   const content=
-
-
-
-// }
