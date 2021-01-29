@@ -1,6 +1,6 @@
 const KeepIcon = () => {
   return (
-    <div className="text-xs">
+    <div className="text-xs cursor-pointer">
       <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
         <path
           fill="#ffc107"

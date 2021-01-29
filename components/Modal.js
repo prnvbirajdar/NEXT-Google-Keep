@@ -85,7 +85,7 @@ const Modal = ({ title, body, id, showModal, setShowModal }) => {
                   <button
                     type="submit"
                     tabIndex="0"
-                    className="font-bold text-xs font-std text-gray-700 bg-gray-100 rounded-md px-5 py-1.5 transition select-none hover:bg-gray-200 focus:bg-gray-200 focus:outline-none dark:text-offwhite dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:bg-gray-600 "
+                    className="transition duration-300 font-bold text-xs font-roboto text-gray-700 bg-gray-100 rounded-md px-5 py-2 mr-1 mb-1 md:mr-1.5 md:mb-1.5 select-none hover:bg-gray-200 focus:bg-gray-200 focus:outline-none dark:text-offwhite dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:bg-gray-600"
                   >
                     Done
                   </button>

@@ -29,8 +29,7 @@ class MyDocument extends Document {
                   var mql = window.matchMedia(preferDarkQuery);
                   var supportsColorSchemeQuery = mql.media === preferDarkQuery;
                   //log media query result
-                  console.log("[Initialization] supportsColorSchemeQuery:%s and prefersDark:%s",supportsColorSchemeQuery,mql.matches);
-                  
+                  //console.log("[Initialization] supportsColorSchemeQuery:%s and prefersDark:%s",supportsColorSchemeQuery,mql.matches);         
                   //local storage
                   var localStorageTheme = null;
                   try {
@@ -38,17 +37,17 @@ class MyDocument extends Document {
                   } catch (err) {}
                   var localStorageExists = localStorageTheme !== null;
                   //log local storage result
-                  console.log("[Initialization] localStorageExists:%s and localStorageDark:%s",localStorageExists,JSON.parse(localStorageTheme));
+                  //console.log("[Initialization] localStorageExists:%s and localStorageDark:%s",localStorageExists,JSON.parse(localStorageTheme));
                   // if localStorage Exists update the value of localStorageTheme
                   if (localStorageExists) {
                     localStorageTheme = JSON.parse(localStorageTheme);
                   }
                   if (localStorageExists) {
                     setClassOnDocumentBody(localStorageTheme);
-                    console.log("[Initial Theme] Setting theme from Local Storage");       
+                    //console.log("[Initial Theme] Setting theme from Local Storage");       
                   } else if (supportsColorSchemeQuery) {
                     setClassOnDocumentBody(mql.matches);  //added to remove flicker
-                    console.log("[Initial Theme] Setting theme from Media Query");
+                   console.log("[Initial Theme] Setting theme from Media Query");
                     // localStorage.setItem(storageKey, mql.matches);
                   }else {
                     var isDarkMode = d.classList.contains(classNameDark);
