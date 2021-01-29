@@ -38,7 +38,8 @@ export async function getStaticProps() {
 getStaticProps();
 
 const db = firebase.firestore();
-
+db.settings({ experimentalForceLongPolling: true });
 db.settings({ timestampsInSnapshots: true });
+db.setLogLevel("debug");
 
 export default db;
