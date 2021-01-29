@@ -2,13 +2,13 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCXTLkYc-K7x2wdU81g8c_aK1LezqnRWAU",
-  authDomain: "keep-next-tailwind.firebaseapp.com",
-  databaseURL: "https://keep-next-tailwind-default-rtdb.firebaseio.com",
-  projectId: "keep-next-tailwind",
-  storageBucket: "keep-next-tailwind.appspot.com",
-  messagingSenderId: "318071216631",
-  appId: "1:318071216631:web:e235550f574e898b6eb6f2"
+  apiKey: process.env.apiKey,
+  authDomain: process.env.authDomain,
+  databaseURL: process.env.databaseURL,
+  projectId: process.env.projectId,
+  storageBucket: process.env.storageBucket,
+  messagingSenderId: process.env.messagingSenderId,
+  appId: process.env.appId,
 };
 
 if (firebase.apps.length === 0) {
@@ -30,8 +30,7 @@ if (firebase.apps.length === 0) {
 //       messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
 //       appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 //     }
-    
-    
+
 //     );
 //   } else {
 //     firebase.app();
