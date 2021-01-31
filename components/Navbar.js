@@ -5,8 +5,10 @@ import Moon from "./IconComponents/Moon";
 import Sun from "./IconComponents/Sun";
 
 const Navbar = () => {
+  //dark theme context
   const { dark, toggleDark, setDark } = useContext(ThemeContext);
 
+  //toggle theme
   const handleClick = () => {
     setDark(dark === true ? false : true);
     toggleDark();

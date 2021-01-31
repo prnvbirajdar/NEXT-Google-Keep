@@ -1,7 +1,8 @@
 import ListDetail from "./ListDetail";
 
 const ListComponent = ({ mainTodoList }) => {
-  console.log(mainTodoList.length);
+  //renders the todo array, returns loading if todo hasn't loaded yet
+
   return mainTodoList.length === 0 || undefined || null ? (
     <div className=" fixed top-0 left-0 right-0 bottom-0 w-full h-screen z-50 overflow-hidden bg-white dark:bg-background opacity-50 flex flex-col items-center justify-center">
       <h2 className="text-center dark:text-offwhite text-lg lg:text-xl font-medium">

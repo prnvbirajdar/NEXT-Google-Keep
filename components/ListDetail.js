@@ -2,8 +2,10 @@ import { useState } from "react";
 import Modal from "./Modal";
 
 const ListDetail = ({ title, id, body }) => {
+  //modal state
   const [showModal, setShowModal] = useState(false);
 
+  //ListDetail renders every individual todo
   return (
     <section
       className="cursor-pointer focus:outline-none focus:ring-1 focus:ring-gray-400 rounded transition duration-300"

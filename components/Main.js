@@ -2,15 +2,17 @@ import db from "../assets/firebase/firebase";
 import InputArea from "../components/InputArea";
 import ListComponent from "./ListComponent";
 import { useState, useEffect } from "react";
-//import { getStaticProps } from "next";
 
 const Main = () => {
+  //main array to save todos
   const [mainTodoList, setMainTodoList] = useState([]);
 
   useEffect(() => {
     getKeepList();
   }, []);
 
+  //getKeepList calls firestore's 'keepList' collections, orders it my most recent created todo,
+  //gives back a snapshot promise which has an array of all the todo items
   const getKeepList = () => {
     db.collection("keepList")
       .orderBy("timeStamp", "desc")
@@ -31,13 +33,6 @@ const Main = () => {
         mainTodoList={mainTodoList}
         setMainTodoList={setMainTodoList}
       />
-
-      {mainTodoList.map((list) => {
-        <div>
-          <p>{list.title}</p>
-          <p>{list.body}</p>
-        </div>;
-      })}
 
       <ListComponent mainTodoList={mainTodoList} />
     </React.Fragment>

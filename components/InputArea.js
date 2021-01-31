@@ -12,6 +12,7 @@ const InputArea = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    //adds new todo to 'keepList' collection
     db.collection("keepList").add({
       title: inputTitle,
       body: inputBody,
@@ -23,6 +24,7 @@ const InputArea = () => {
     setShowInput(false);
   };
 
+  //closes the title if clicked outside of inputArea
   const handleClickOutside = (e) => {
     const { current: wrap } = titleRef;
     if (wrap && !wrap.contains(e.target)) {

@@ -8,10 +8,12 @@ const Modal = ({ title, body, id, showModal, setShowModal }) => {
 
   const modalRef = useRef();
 
+  //removes todo on clicking delete icon
   const removeTodo = () => {
     db.collection("keepList").doc(id).delete();
   };
 
+  //updates todo when changes are made in modal
   const updateTodo = () => {
     db.collection("keepList").doc(id).update({
       title: modalTitle,
@@ -19,6 +21,7 @@ const Modal = ({ title, body, id, showModal, setShowModal }) => {
     });
   };
 
+  //if clicked outside of modal or clicked DONE, todo gets updated
   const closeModal = (e) => {
     if (modalRef.current === e.target) {
       setShowModal(false);
