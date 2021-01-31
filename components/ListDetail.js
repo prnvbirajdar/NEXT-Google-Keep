@@ -19,8 +19,8 @@ const ListDetail = ({ title, id, body }) => {
               Empty note
             </p>
           ) : (
-            <p className="lg:tracking-wide break-all transition font-roboto text-base sm:text-sm md:text-sm lg:text-sm dark:text-offwhite ">
-              <strong>{title}</strong>
+            <p className="lg:tracking-wide break-all font-medium transition font-roboto text-base sm:text-sm md:text-sm lg:text-sm dark:text-offwhite ">
+              {title}
             </p>
           )}
         </div>
