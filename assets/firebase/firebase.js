@@ -21,6 +21,8 @@ if (firebase.apps.length === 0) {
 
 const db = firebase.firestore();
 
+console.log(process.env);
+
 export default db;
 
 // apiKey: @apikey,
