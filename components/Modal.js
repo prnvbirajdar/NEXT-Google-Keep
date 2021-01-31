@@ -57,14 +57,14 @@ const Modal = ({ title, body, id, showModal, setShowModal }) => {
                       type="text"
                       placeholder="Title"
                       onChange={handleTitleChange}
-                      className="dark:text-offwhite dark:bg-background  font-bold px-2 pt-1 outline-none pb-2 font-roboto text-base sm:text-sm md:text-sm lg:text-sm"
+                      className="lg:tracking-wide dark:text-offwhite dark:bg-background  font-bold px-2 pt-1 outline-none pb-2 font-roboto text-base sm:text-sm md:text-sm lg:text-sm"
                       value={modalTitle}
                     />
                   }
 
                   <textarea
                     value={modalBody}
-                    className="dark:text-offwhite dark:bg-background font-normal px-2 pt-2 outline-none font-roboto text-base sm:text-sm md:text-sm lg:text-sm"
+                    className="lg:tracking-wide dark:text-offwhite dark:bg-background font-normal px-2 pt-2 outline-none font-roboto text-base sm:text-sm md:text-sm lg:text-sm"
                     type="text"
                     rows="6"
                     cols="20"
