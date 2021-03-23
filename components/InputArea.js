@@ -40,7 +40,7 @@ const InputArea = () => {
   }, []);
 
   return (
-    <main className="transition duration-300 relative border dark:border-gray-500 dark:hover:border-gray-300  bg-white dark:bg-background rounded-md overflow-hidden w-3/4 sm:max-w-md md:max-w-md lg:max-w-lg mx-auto mt-10 mb-5 shadow-md transition cursor-text">
+    <main className="transition z-30 duration-300 relative border dark:border-gray-500 dark:hover:border-gray-300  bg-white dark:bg-background rounded-md overflow-hidden w-3/4 sm:max-w-md md:max-w-md lg:max-w-lg mx-auto mt-10 mb-5 shadow-md transition cursor-text">
       <form onSubmit={handleSubmit} className="px-2 pt-2 pb-1">
         <div className="flex flex-col ">
           {showInput && (
